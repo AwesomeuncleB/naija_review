@@ -191,3 +191,16 @@ The demo experience matters for judges. Streaming shows the agent "thinking" in 
 - Add pgvector for true semantic similarity in collaborative filtering
 - Build a proper NDCG@10 offline evaluation harness
 - Cross-domain: use Amazon + Goodreads datasets to recommend books/products not just restaurants
+## Running the App
+
+The full Yelp dataset (4.5GB) is not included in this repo due to size limits.
+
+To run with full data:
+1. Download the Yelp Open Dataset from https://www.yelp.com/dataset
+2. Run: python scripts/preprocess_yelp.py --data-dir data --db-path data/naijareview.db
+3. Run: docker-compose up --build
+
+To run with demo mode (mock Nigerian businesses):
+1. docker-compose up --build
+2. The app will use mock candidates automatically when DB is empty
+
